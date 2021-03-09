@@ -7,16 +7,39 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <style type="text/css">
+        #swagger {
+            margin-top: 5px
+        }
+       
+    </style>
+
 </head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <body>
-   
+  <div style="background-color: #0435bf4f; color: black" class="navbar  navbar-fixed-top">
+        <div class="container">
+            <div  class="navbar-header ">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("DesafioPG", "Index", "Home", new { area = "" }, new { @style = "color:black" , @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Página Inicial", "Index", "Home", new { area = "" }, new { @style = "color:black" })</li>
+                    <li><div id="swagger">@Html.ActionLink("API", "Index", "swagger/ui/index", new { area = "" }, new { @style = "color:black; margin-top:5px" }) <a href="swagger/ui/index"><img src="~/Content/Image/icon.png" style="text-align: left; width: 40px; height: 40px" alt="Minha Api Bassani." /></a></div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Minha Api ASP.NET</p>
-        </footer>
+        
     </div>
 
     @Scripts.Render("~/bundles/jquery")

@@ -191,3 +191,6 @@ C:\projetos_mike\DesafioPG\DesafioPG\obj\Debug\DesafioPG.pdb
 C:\wamp64\www\DesafioPG\DesafioPG\bin\DesafioPG.xml
 C:\wamp64\www\DesafioPG\DesafioPG\bin\Swashbuckle.Core.dll
 C:\wamp64\www\DesafioPG\DesafioPG\bin\WebActivatorEx.dll
+C:\projetos_mike\DesafioPG\DesafioPG\bin\DesafioPG.xml
+C:\projetos_mike\DesafioPG\DesafioPG\bin\Swashbuckle.Core.dll
+C:\projetos_mike\DesafioPG\DesafioPG\bin\WebActivatorEx.dll

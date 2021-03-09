@@ -65,7 +65,6 @@ namespace DesafioPG.Services
                 #endregion
 
 
-
                 return listaObject;
             }
             catch (Exception)
@@ -77,15 +76,12 @@ namespace DesafioPG.Services
         }
 
 
-        private string GerarHash(
-          string ts, string privateKey, string publicKey)
+        private string GerarHash(string ts, string privateKey, string publicKey)
         {
-            byte[] bytes =
-                Encoding.UTF8.GetBytes(ts + privateKey + publicKey);
+            byte[] bytes = Encoding.UTF8.GetBytes(ts + privateKey + publicKey);
             var gerador = MD5.Create();
             byte[] bytesHash = gerador.ComputeHash(bytes);
-            return BitConverter.ToString(bytesHash)
-                .ToLower().Replace("-", String.Empty);
+            return BitConverter.ToString(bytesHash).ToLower().Replace("-", String.Empty);
         }
 
 

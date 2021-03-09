@@ -11,7 +11,7 @@ using System.Web.Http;
 namespace DesafioPG.Controllers
 {
     public class PersonagensController : ApiController
-    {      
+    {
 
         private static List<Heros> Personagens = new List<Heros>();
 

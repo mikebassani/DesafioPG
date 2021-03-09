@@ -184,8 +184,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Image\BackGround.jpg" />
-    <Content Include="Content\Image\marvel.jpg" />
+    <Content Include="Content\Image\icon.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
