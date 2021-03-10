@@ -50,3 +50,16 @@ e salvei na raiz do meu projeto com o nome proposto.
 Criei um método **GET**  que lê e desserializa o arquivo "personagensmarvel.txt”. retornado uma lista
 
 Usei o Swgger para documentar a Api
+
+
+## End
+
+### Tela (Index)
+
+![Capturar](https://user-images.githubusercontent.com/47748537/110571587-7ec52b00-8136-11eb-9d05-ac170691a37e.JPG)
+
+
+### Swagger
+
+![1](https://user-images.githubusercontent.com/47748537/110571702-b502aa80-8136-11eb-86bd-91b7b3155983.JPG)
+
