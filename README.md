@@ -38,8 +38,7 @@ Criei a classe **HttpInstance** pois obtive a informação de que fazer o uso do
 
 Fiz a requisição, desserializei  o json mapeando com a model Heros pegando somente às informações necessárias
 #### Gerando o arquivo
-Serializei o json já mapeado e o guardei em uma variável Arquivo
-Peguei o caminho do meu projeto 
+Serializei o json já mapeado e o guardei em uma variável Arquivo.
 
 Embora o teste não tenha exigido que o arquivo fosse formatado, eu formatei no tipo json para ficar bonito
 e salvei na raiz do meu projeto com o nome proposto.
