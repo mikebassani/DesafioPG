@@ -50,6 +50,7 @@ e salvei na raiz do meu projeto com o nome proposto.
 Me informaram que eu estava retornando somente 20 registros em ordem alfabética dos personagens.
 
 Após pesquisar na documentação verifiquei a existência de dois parâmetros opcionais :
+
 **offset** (A API da Marvel diz “Ignore o número especificado de recursos no conjunto de resultados”. o que ele faz “Pega a partir do numero especificado, se você colocar 100 ele pegará a partir do centésimo resultado”).
 
 **limit** (Limita o conjunto de resultados ao número especificado de recursos.{Limite máximo permitido = 100})
