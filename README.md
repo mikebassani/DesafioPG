@@ -44,6 +44,111 @@ Embora o teste não tenha exigido que o arquivo fosse formatado, eu formatei no 
 e salvei na raiz do meu projeto com o nome proposto.
 
 
+
+
+# RETORNAR TODOS OS PERSONAGENS
+Me informaram que eu estava retornando somente 20 registros em ordem alfabética dos personagens.
+
+Após pesquisar na documentação verifiquei a existência de dois parâmetros opcionais :
+**offset** (A API da Marvel diz “Ignore o número especificado de recursos no conjunto de resultados”. o que ele faz “Pega a partir do numero especificado, se você colocar 100 ele pegará a partir do centésimo resultado”).
+
+**limit** (Limita o conjunto de resultados ao número especificado de recursos.{Limite máximo permitido = 100})
+
+**Caso queira retornar todos os personagens ou "Paginar" e limitar os resultados, basta modificar o código abaixo**
+NA PASTA SERVICES, NA CLASSE HERO  ALTERE O MÉTODO **GetHeros** PELO CODIGO ABAIXO
+
+
+`````
+ public List<Heros> GetHeros()
+        {
+
+            #region"Parametros"
+            var ts = DateTime.Now.Ticks.ToString();
+            var publicKey = "da4460fd1429f2d2863f73ace050aa1d";
+            var privateKey = "0bdfdc41351fb0cd6152ccc9f4588783ef34a465";
+            var hash = GerarHash(ts, privateKey, publicKey);
+            var offset = 0;
+            var limit = 100;
+            #endregion
+
+            try
+            {
+                List<object> listaObject = new List<object>();
+               
+                for (var i = 1; i <= 15; i++)
+                {
+
+                    var model = new Heros();
+                    var modelResults = new List<Heros.Result>();
+
+                    var action = string.Format("/v1/public/characters?ts={0}&apikey={1}&hash={2}&limit={3}&offset={4}", ts, publicKey, hash, limit, offset);
+
+                    HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, BaseUrl + action);
+
+                    var response = HttpInstance.GetHttpClientInstance().GetAsync(request.RequestUri.AbsoluteUri).Result;
+
+                    var jsonString = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+
+                    model = JsonConvert.DeserializeObject<Heros>(jsonString);
+                    modelResults = model.data.results;
+
+                    listaObject.AddRange(modelResults.ToList());
+
+                    offset = limit * i;
+
+                }
+
+
+
+                #region"Gerar arquivo"
+
+                var arquivo = JsonConvert.SerializeObject(listaObject);
+                var caminho = System.AppDomain.CurrentDomain.BaseDirectory.ToString();
+
+                var JsonFormatted = JValue.Parse(arquivo).ToString();
+                System.IO.File.WriteAllText(@"" + caminho + "personagensmarvel.txt", JsonFormatted);
+
+
+                #endregion
+
+
+                return null;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+
+        }
+`````
+
+**PARA RETORNAR TODOS OS ARQUIVOS MODIFICADOS QUANDO FOR CONSUMIR A API CRIADA**
+
+No PersonagensController Altere o método **GET** pelo codigo abaixo!
+
+```
+public List<object> Get()
+        {
+           var model = new List<object>();
+
+            var name = "personagensmarvel.txt";
+
+            var caminho = System.AppDomain.CurrentDomain.BaseDirectory.ToString();
+
+            var FullPath = Path.Combine(caminho, name);
+
+            var jsonString = File.ReadAllText(FullPath);
+
+            model = JsonConvert.DeserializeObject<List<object>>(jsonString);            
+
+            return model;
+        }
+```
+
+
+
+
 ## Diferenciais 
 
 Criei um método **GET**  que lê e desserializa o arquivo "personagensmarvel.txt”. retornado uma lista
