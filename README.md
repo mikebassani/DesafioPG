@@ -57,7 +57,7 @@ Após pesquisar na documentação verifiquei a existência de dois parâmetros o
 
 **Caso queira retornar todos os personagens ou "Paginar" e limitar os resultados, basta modificar o código abaixo**
 
-NA PASTA SERVICES, NA CLASSE HERO  ALTERE O MÉTODO **GetHeros** PELO CODIGO ABAIXO
+NA PASTA SERVICES, NA CLASSE HERO  ALTERE O MÉTODO **GetHeros** PELO CÓDIGO ABAIXO
 
 
 `````
