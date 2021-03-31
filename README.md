@@ -55,6 +55,7 @@ Após pesquisar na documentação verifiquei a existência de dois parâmetros o
 **limit** (Limita o conjunto de resultados ao número especificado de recursos.{Limite máximo permitido = 100})
 
 **Caso queira retornar todos os personagens ou "Paginar" e limitar os resultados, basta modificar o código abaixo**
+
 NA PASTA SERVICES, NA CLASSE HERO  ALTERE O MÉTODO **GetHeros** PELO CODIGO ABAIXO
 
 
